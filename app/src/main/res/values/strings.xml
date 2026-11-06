@@ -73,7 +73,6 @@
     <string name="settings_block_contacts_searching_desc">Deny access from main profile to contacts inside work profile.</string>
     <string name="settings_allow_debugging">Allow Debugging in Work Profile</string>
     <string name="settings_allow_debugging_desc">Lift the debugging restriction Android applies to work profiles, so adb can install, launch and debug apps there.</string>
-    <string name="app_name_fork" translatable="false">Shelter (redwarp)</string>
     <string name="settings_payment_stub">Payment Service Stub</string>
     <string name="settings_payment_stub_desc">Enable a fake NFC payment service in the main profile, so that the "contactless payments" option under Settings - NFC becomes enabled to allow you to choose a payment app inside the work profile. This works around an Android bug that makes it impossible to select a payment app inside the work profile if none is available in the main profile.</string>
     <string name="settings_services">Services</string>

@@ -33,7 +33,7 @@
         android:name=".ShelterApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher_egg"
-        android:label="@string/app_name_fork"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_egg_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
