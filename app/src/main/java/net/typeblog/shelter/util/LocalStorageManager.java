@@ -18,6 +18,7 @@ public class LocalStorageManager {
     public static final String PREF_AUTO_FREEZE_DELAY = "auto_freeze_delay";
     public static final String PREF_BLOCK_CONTACTS_SEARCHING = "block_contacts_searching";
     public static final String PREF_PAYMENT_STUB = "payment_stub";
+    public static final String PREF_ALLOW_DEBUGGING = "allow_debugging";
 
     private static final String LIST_DIVIDER = ",";
 

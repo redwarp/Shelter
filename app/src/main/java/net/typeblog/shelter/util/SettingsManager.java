@@ -82,6 +82,17 @@ public class SettingsManager {
         return mStorage.getBoolean(LocalStorageManager.PREF_BLOCK_CONTACTS_SEARCHING);
     }
 
+    // Set whether debugging features are allowed in the work profile
+    public void setAllowDebuggingEnabled(boolean enabled) {
+        mStorage.setBoolean(LocalStorageManager.PREF_ALLOW_DEBUGGING, enabled);
+        syncSettingsToProfileBool(LocalStorageManager.PREF_ALLOW_DEBUGGING, enabled);
+    }
+
+    // Get whether debugging features are allowed in the work profile
+    public boolean getAllowDebuggingEnabled() {
+        return mStorage.getBoolean(LocalStorageManager.PREF_ALLOW_DEBUGGING);
+    }
+
     // Set the enabled state of the auto freeze service
     // This does NOT need to be synchronized nor applied across profile
     public void setAutoFreezeServiceEnabled(boolean enabled) {

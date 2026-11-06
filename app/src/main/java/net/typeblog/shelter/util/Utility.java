@@ -226,6 +226,14 @@ public class Utility {
         manager.setCrossProfileContactsSearchDisabled(adminComponent,
                 SettingsManager.getInstance().getBlockContactsSearchingEnabled());
 
+        // Android applies DISALLOW_DEBUGGING_FEATURES to managed profiles by default;
+        // lift it optionally so apps in the profile can be installed and debugged over adb
+        if (SettingsManager.getInstance().getAllowDebuggingEnabled()) {
+            manager.clearUserRestriction(adminComponent, UserManager.DISALLOW_DEBUGGING_FEATURES);
+        } else {
+            manager.addUserRestriction(adminComponent, UserManager.DISALLOW_DEBUGGING_FEATURES);
+        }
+
         manager.setProfileEnabled(adminComponent);
     }
 

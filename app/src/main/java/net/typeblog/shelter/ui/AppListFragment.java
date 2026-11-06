@@ -1,5 +1,7 @@
 package net.typeblog.shelter.ui;
 
+import net.typeblog.shelter.BuildConfig;
+
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -48,7 +50,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class AppListFragment extends BaseFragment {
-    static final String BROADCAST_REFRESH = "net.typeblog.shelter.broadcast.REFRESH";
+    static final String BROADCAST_REFRESH = BuildConfig.APPLICATION_ID + ".broadcast.REFRESH";
 
     // Menu Items
     private static final int MENU_ITEM_CLONE = 10001;

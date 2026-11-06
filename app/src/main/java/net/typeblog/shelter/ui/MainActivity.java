@@ -1,5 +1,7 @@
 package net.typeblog.shelter.ui;
 
+import net.typeblog.shelter.BuildConfig;
+
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Intent;
@@ -41,8 +43,8 @@ import net.typeblog.shelter.util.UriForwardProxy;
 import net.typeblog.shelter.util.Utility;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String BROADCAST_CONTEXT_MENU_CLOSED = "net.typeblog.shelter.broadcast.CONTEXT_MENU_CLOSED";
-    public static final String BROADCAST_SEARCH_FILTER_CHANGED = "net.typeblog.shelter.broadcast.SEARCH_FILTER_CHANGED";
+    public static final String BROADCAST_CONTEXT_MENU_CLOSED = BuildConfig.APPLICATION_ID + ".broadcast.CONTEXT_MENU_CLOSED";
+    public static final String BROADCAST_SEARCH_FILTER_CHANGED = BuildConfig.APPLICATION_ID + ".broadcast.SEARCH_FILTER_CHANGED";
 
     private final ActivityResultLauncher<Void> mStartSetup =
             registerForActivityResult(new SetupWizardActivity.SetupWizardContract(), this::setupWizardCb);

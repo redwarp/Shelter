@@ -33,7 +33,7 @@
         android:name=".ShelterApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher_egg"
-        android:label="@string/app_name"
+        android:label="@string/app_name_fork"
         android:roundIcon="@mipmap/ic_launcher_egg_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -66,21 +66,21 @@
             android:theme="@style/Theme.AppCompat.Translucent.NoTitleBar"
             android:exported="true">
             <intent-filter>
-                <action android:name="net.typeblog.shelter.action.FINALIZE_PROVISION" />
-                <action android:name="net.typeblog.shelter.action.START_SERVICE" />
-                <action android:name="net.typeblog.shelter.action.TRY_START_SERVICE" />
-                <action android:name="net.typeblog.shelter.action.INSTALL_PACKAGE" />
-                <action android:name="net.typeblog.shelter.action.UNINSTALL_PACKAGE" />
-                <action android:name="net.typeblog.shelter.action.UNFREEZE_AND_LAUNCH" />
-                <action android:name="net.typeblog.shelter.action.PUBLIC_UNFREEZE_AND_LAUNCH" />
-                <action android:name="net.typeblog.shelter.action.PUBLIC_FREEZE_ALL" />
-                <action android:name="net.typeblog.shelter.action.FREEZE_ALL_IN_LIST" />
+                <action android:name="${applicationId}.action.FINALIZE_PROVISION" />
+                <action android:name="${applicationId}.action.START_SERVICE" />
+                <action android:name="${applicationId}.action.TRY_START_SERVICE" />
+                <action android:name="${applicationId}.action.INSTALL_PACKAGE" />
+                <action android:name="${applicationId}.action.UNINSTALL_PACKAGE" />
+                <action android:name="${applicationId}.action.UNFREEZE_AND_LAUNCH" />
+                <action android:name="${applicationId}.action.PUBLIC_UNFREEZE_AND_LAUNCH" />
+                <action android:name="${applicationId}.action.PUBLIC_FREEZE_ALL" />
+                <action android:name="${applicationId}.action.FREEZE_ALL_IN_LIST" />
                 <!-- We need two of these to avoid being prompted with an action chooser dialog -->
                 <!-- When the intent is actually already forwarded to work profile -->
-                <action android:name="net.typeblog.shelter.action.START_FILE_SHUTTLE" />
-                <action android:name="net.typeblog.shelter.action.START_FILE_SHUTTLE_2" />
-                <action android:name="net.typeblog.shelter.action.SYNCHRONIZE_PREFERENCE" />
-                <action android:name="net.typeblog.shelter.action.PACKAGEINSTALLER_CALLBACK" />
+                <action android:name="${applicationId}.action.START_FILE_SHUTTLE" />
+                <action android:name="${applicationId}.action.START_FILE_SHUTTLE_2" />
+                <action android:name="${applicationId}.action.SYNCHRONIZE_PREFERENCE" />
+                <action android:name="${applicationId}.action.PACKAGEINSTALLER_CALLBACK" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -117,7 +117,7 @@
         <!-- A FileProvider that proxies opened Fd from the other profile -->
         <provider
             android:name="net.typeblog.shelter.util.FileProviderProxy"
-            android:authorities="net.typeblog.shelter.files"
+            android:authorities="${applicationId}.files"
             android:grantUriPermissions="true"
             android:exported="false">
             <meta-data
@@ -128,7 +128,7 @@
         <!-- A DocumentsProvider that lists files in another profile -->
         <provider
             android:name="net.typeblog.shelter.util.CrossProfileDocumentsProvider"
-            android:authorities="net.typeblog.shelter.documents"
+            android:authorities="${applicationId}.documents"
             android:grantUriPermissions="true"
             android:permission="android.permission.MANAGE_DOCUMENTS"
             android:exported="true"

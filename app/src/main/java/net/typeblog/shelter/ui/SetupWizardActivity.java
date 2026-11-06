@@ -1,5 +1,7 @@
 package net.typeblog.shelter.ui;
 
+import net.typeblog.shelter.BuildConfig;
+
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContract;
@@ -37,8 +39,8 @@ public class SetupWizardActivity extends AppCompatActivity {
     // finished by the system, but the Shelter inside the profile has never been brought up
     // due to the user having not clicked on the notification yet (on Android 7 or lower).
     // TODO: When we remove support for Android 7, get rid of all of these nonsense :)
-    public static final String ACTION_RESUME_SETUP = "net.typeblog.shelter.RESUME_SETUP";
-    public static final String ACTION_PROFILE_PROVISIONED = "net.typeblog.shelter.PROFILE_PROVISIONED";
+    public static final String ACTION_RESUME_SETUP = BuildConfig.APPLICATION_ID + ".RESUME_SETUP";
+    public static final String ACTION_PROFILE_PROVISIONED = BuildConfig.APPLICATION_ID + ".PROFILE_PROVISIONED";
 
     private DevicePolicyManager mPolicyManager = null;
     private LocalStorageManager mStorage = null;

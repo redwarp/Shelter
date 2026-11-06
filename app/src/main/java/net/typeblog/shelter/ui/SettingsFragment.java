@@ -41,6 +41,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Prefer
     private static final String SETTINGS_AUTO_FREEZE_DELAY = "settings_auto_freeze_delay";
     private static final String SETTINGS_SKIP_FOREGROUND = "settings_dont_freeze_foreground";
     private static final String SETTINGS_PAYMENT_STUB = "settings_payment_stub";
+    private static final String SETTINGS_ALLOW_DEBUGGING = "settings_allow_debugging";
 
     private static final int[] AUTO_FREEZE_DELAY_SECONDS = new int[]{0, 60, 2 * 60, 5 * 60};
 
@@ -52,6 +53,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Prefer
     private CheckBoxPreference mPrefAutoFreezeService = null;
     private CheckBoxPreference mPrefSkipForeground = null;
     private CheckBoxPreference mPrefPaymentStub = null;
+    private CheckBoxPreference mPrefAllowDebugging = null;
 
     private DropDownPreference mPrefAutoFreezeDelay = null;
 
@@ -97,6 +99,9 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Prefer
         mPrefBlockContactsSearching = (CheckBoxPreference) findPreference(SETTINGS_BLOCK_CONTACTS_SEARCHING);
         mPrefBlockContactsSearching.setChecked(mManager.getBlockContactsSearchingEnabled());
         mPrefBlockContactsSearching.setOnPreferenceChangeListener(this);
+        mPrefAllowDebugging = (CheckBoxPreference) findPreference(SETTINGS_ALLOW_DEBUGGING);
+        mPrefAllowDebugging.setChecked(mManager.getAllowDebuggingEnabled());
+        mPrefAllowDebugging.setOnPreferenceChangeListener(this);
         mPrefPaymentStub = (CheckBoxPreference) findPreference(SETTINGS_PAYMENT_STUB);
         mPrefPaymentStub.setChecked(mManager.getPaymentStubEnabled());
         mPrefPaymentStub.setOnPreferenceChangeListener(this);
@@ -196,6 +201,9 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Prefer
             return true;
         } else if (preference == mPrefBlockContactsSearching) {
             mManager.setBlockContactsSearchingEnabled((boolean) newState);
+            return true;
+        } else if (preference == mPrefAllowDebugging) {
+            mManager.setAllowDebuggingEnabled((boolean) newState);
             return true;
         } else if (preference == mPrefAutoFreezeService) {
             mManager.setAutoFreezeServiceEnabled((boolean) newState);

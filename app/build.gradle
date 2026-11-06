@@ -41,7 +41,7 @@ android {
     compileSdk 35
     buildToolsVersion = '35.0.0'
     defaultConfig {
-        applicationId "net.typeblog.shelter"
+        applicationId "net.redwarp.shelter"
         minSdkVersion 24
         targetSdkVersion 35
         versionCode getVersionCode()

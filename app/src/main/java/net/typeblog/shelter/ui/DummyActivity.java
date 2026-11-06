@@ -1,5 +1,7 @@
 package net.typeblog.shelter.ui;
 
+import net.typeblog.shelter.BuildConfig;
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -57,23 +59,23 @@ import java.util.UUID;
 // which is only possible through Intents that are in
 // the crossProfileIntentFilter
 public class DummyActivity extends Activity {
-    public static final String FINALIZE_PROVISION = "net.typeblog.shelter.action.FINALIZE_PROVISION";
-    public static final String START_SERVICE = "net.typeblog.shelter.action.START_SERVICE";
-    public static final String TRY_START_SERVICE = "net.typeblog.shelter.action.TRY_START_SERVICE";
-    public static final String INSTALL_PACKAGE = "net.typeblog.shelter.action.INSTALL_PACKAGE";
-    public static final String UNINSTALL_PACKAGE = "net.typeblog.shelter.action.UNINSTALL_PACKAGE";
-    public static final String UNFREEZE_AND_LAUNCH = "net.typeblog.shelter.action.UNFREEZE_AND_LAUNCH";
-    public static final String PUBLIC_UNFREEZE_AND_LAUNCH = "net.typeblog.shelter.action.PUBLIC_UNFREEZE_AND_LAUNCH";
-    public static final String PUBLIC_FREEZE_ALL = "net.typeblog.shelter.action.PUBLIC_FREEZE_ALL";
-    public static final String FREEZE_ALL_IN_LIST = "net.typeblog.shelter.action.FREEZE_ALL_IN_LIST";
+    public static final String FINALIZE_PROVISION = BuildConfig.APPLICATION_ID + ".action.FINALIZE_PROVISION";
+    public static final String START_SERVICE = BuildConfig.APPLICATION_ID + ".action.START_SERVICE";
+    public static final String TRY_START_SERVICE = BuildConfig.APPLICATION_ID + ".action.TRY_START_SERVICE";
+    public static final String INSTALL_PACKAGE = BuildConfig.APPLICATION_ID + ".action.INSTALL_PACKAGE";
+    public static final String UNINSTALL_PACKAGE = BuildConfig.APPLICATION_ID + ".action.UNINSTALL_PACKAGE";
+    public static final String UNFREEZE_AND_LAUNCH = BuildConfig.APPLICATION_ID + ".action.UNFREEZE_AND_LAUNCH";
+    public static final String PUBLIC_UNFREEZE_AND_LAUNCH = BuildConfig.APPLICATION_ID + ".action.PUBLIC_UNFREEZE_AND_LAUNCH";
+    public static final String PUBLIC_FREEZE_ALL = BuildConfig.APPLICATION_ID + ".action.PUBLIC_FREEZE_ALL";
+    public static final String FREEZE_ALL_IN_LIST = BuildConfig.APPLICATION_ID + ".action.FREEZE_ALL_IN_LIST";
     // If we use the same intent for parent -> profile and profile -> parent, the user will
     // be prompted with the action chooser with only one choice in it when the intent is
     // forwarded by Utility.transferIntentToProfile()
     // This is a bad experience, so we use two to avoid this.
-    public static final String START_FILE_SHUTTLE = "net.typeblog.shelter.action.START_FILE_SHUTTLE";
-    public static final String START_FILE_SHUTTLE_2 = "net.typeblog.shelter.action.START_FILE_SHUTTLE_2";
-    public static final String SYNCHRONIZE_PREFERENCE = "net.typeblog.shelter.action.SYNCHRONIZE_PREFERENCE";
-    public static final String PACKAGEINSTALLER_CALLBACK = "net.typeblog.shelter.action.PACKAGEINSTALLER_CALLBACK";
+    public static final String START_FILE_SHUTTLE = BuildConfig.APPLICATION_ID + ".action.START_FILE_SHUTTLE";
+    public static final String START_FILE_SHUTTLE_2 = BuildConfig.APPLICATION_ID + ".action.START_FILE_SHUTTLE_2";
+    public static final String SYNCHRONIZE_PREFERENCE = BuildConfig.APPLICATION_ID + ".action.SYNCHRONIZE_PREFERENCE";
+    public static final String PACKAGEINSTALLER_CALLBACK = BuildConfig.APPLICATION_ID + ".action.PACKAGEINSTALLER_CALLBACK";
 
     // Only these actions are allowed without a valid signature
     private static final List<String> ACTIONS_ALLOWED_WITHOUT_SIGNATURE = Arrays.asList(
